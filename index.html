@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Creative Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom animations for uniqueness */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Custom cursor for interactivity */
+    body {
+      cursor: default;
+    }
+    .cursor-pointer {
+      cursor: pointer;
+    }
+    /* Responsive grid for projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    /* Background gradients for hero */
+    .hero-bg {
+      background: linear-gradient(
+        135deg,
+        rgba(220, 20, 60, 0.7),
+        rgba(0, 0, 0, 0.9)
+      );
+    }
+    /* Onerror fallback for images */
+    img {
+      onerror: "this.style.display='none'";
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-200">
+  <!-- Navigation Bar -->
+  <nav
+    class="fixed top-0 left-0 right-0 bg-black bg-opacity-90 shadow-lg z-50 transition-all duration-300"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+    >
+      <a
+        href="#home"
+        class="text-2xl font-bold text-crimson-500 animate-fade-in-up"
+        style="color: #DC143C;"
+        >Asser El-Sayed</a
+      >
+      <ul class="hidden md:flex space-x-8 text-lg">
+        <li>
+          <a
+            href="#home"
+            class="hover:text-crimson-400 transition-colors"
+            style="color: #E55361;"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="hover:text-crimson-400 transition-colors"
+            style="color: #E55361;"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="hover:text-crimson-400 transition-colors"
+            style="color: #E55361;"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="hover:text-crimson-400 transition-colors"
+            style="color: #E55361;"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="hover:text-crimson-400 transition-colors"
+            style="color: #E55361;"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <button onclick="toggleMenu()" class="md:hidden animate-fade-in-up" style="color: #DC143C;">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      id="mobile-menu"
+      class="md:hidden bg-black bg-opacity-90 border-t border-gray-700 hidden"
+    >
+      <ul class="py-2 px-4 space-y-2 text-crimson-500" style="color: #DC143C;">
+        <li><a href="#home" class="block hover:text-crimson-400">Home</a></li>
+        <li><a href="#about" class="block hover:text-crimson-400">About</a></li>
+        <li><a href="#projects" class="block hover:text-crimson-400">Projects</a></li>
+        <li><a href="#skills" class="block hover:text-crimson-400">Skills</a></li>
+        <li><a href="#contact" class="block hover:text-crimson-400">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section
+    id="home"
+    class="hero-bg min-h-screen flex flex-col items-center justify-center relative text-center px-4"
+  >
+    <div class="animate-fade-in-up max-w-4xl">
+      <h1 class="text-6xl md:text-7xl font-bold text-crimson-500 mb-4" style="color: #DC143C;">
+        Asser El-Sayed
+      </h1>
+      <p class="text-2xl md:text-3xl text-gray-300 mb-8">
+        Full-Stack .NET Developer
+      </p>
+      <a
+        href="#projects"
+        class="bg-crimson-600 text-white px-8 py-3 rounded-full text-lg hover:bg-crimson-700 transition-colors cursor-pointer"
+        style="background-color: #DC143C;"
+        onmouseover="this.style.backgroundColor='#B22222'"
+        onmouseout="this.style.backgroundColor='#DC143C'"
+        >View My Work</a
+      >
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <a href="#about" class="text-crimson-500 animate-bounce" style="color: #DC143C;">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-black bg-opacity-90">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-crimson-500 animate-fade-in-up" style="color: #DC143C;">
+        About Me
+      </h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img
+            src="./WhatsApp Image 2025-08-18 at 23.57.13_1adfb1e5.jpg"
+            alt="Cozy home office setup with laptop, plant, and inspirational quotes on the wall, warm lighting creating a productive and creative atmosphere"
+            class="rounded-lg shadow-lg animate-fade-in-up border-4 border-crimson-600"
+            style="border-color: #DC143C;"
+          />
+        </div>
+        <div class="md:w-1/2 md:pl-8 animate-fade-in-up text-gray-300">
+          <p class="text-lg mb-6">
+           I'm a dedicated and adaptable developer with a strong foundation in .NET, complemented by advanced experience in ReactJS and Tailwind CSS. My technical toolkit also includes proficiency in Java, HTML5, CSS, and JavaScript, allowing me to build robust, scalable, and visually engaging web applications across diverse platforms.
+          </p>
+          <p class="text-lg mb-6">
+           Alongside my technical expertise, I bring strong communication skills and a collaborative spirit to every project. I'm a reliable team player who thrives in dynamic environments, values clear dialogue, and enjoys contributing to shared goals with creativity and accountability.
+          </p>
+          <a
+            href="#contact"
+            class="bg-crimson-600 text-white px-6 py-2 rounded-full hover:bg-crimson-700 transition-colors cursor-pointer"
+            style="background-color: #DC143C;"
+            onmouseover="this.style.backgroundColor='#B22222'"
+            onmouseout="this.style.backgroundColor='#DC143C'"
+            >Lets Connect</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-black bg-opacity-80">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-crimson-500 animate-fade-in-up" style="color: #DC143C;">
+        My Projects
+      </h2>
+      <div class="project-grid">
+        <div
+          class="bg-gray-900 rounded-lg shadow-lg overflow-hidden animate-fade-in-up border-2 border-crimson-600"
+          style="border-color: #DC143C;"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Asser-ElSayed/first-react-project---Copy/main/public/ticket-booking-screenshot.png"
+            alt="Ticket Booking Website screenshot"
+            class="w-full h-48 object-cover"
+            onerror="this.style.display='none'"
+          />
+          <div class="p-6 text-gray-300">
+            <h3 class="text-2xl font-bold mb-2 text-crimson-500" style="color: #DC143C;">
+              Ticket Booking Website
+            </h3>
+            <p class="mb-4">
+              A ticket booking website built with ReactJS and JavaScript, featuring user-friendly interface and dynamic booking functionalities.
+            </p>
+            <div class="flex space-x-2">
+              <span
+                class="bg-red-900 text-crimson-400 px-3 py-1 rounded-full text-sm"
+                style="background-color: #330000; color: #E55361;"
+                >ReactJS</span
+              >
+              <span
+                class="bg-red-900 text-crimson-400 px-3 py-1 rounded-full text-sm"
+                style="background-color: #330000; color: #E55361;"
+                >JavaScript</span
+              >
+            </div>
+            <a
+              href="https://github.com/Asser-ElSayed/first-react-project---Copy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-crimson-500 hover:text-crimson-400 mt-4 inline-block cursor-pointer"
+              style="color: #DC143C;"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-black bg-opacity-90">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-crimson-500 animate-fade-in-up" style="color: #DC143C;">
+        Skills & Expertise
+      </h2>
+      <div
+        id="skills-content"
+        class="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300"
+      >
+        <!-- React -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up">
+          <h3 class="text-xl font-semibold">React</h3>
+        </div>
+        <!-- ASP.NET Core -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up">
+          <h3 class="text-xl font-semibold">ASP.NET Core</h3>
+        </div>
+        <!-- Tailwind CSS -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up">
+          <h3 class="text-xl font-semibold">Tailwind CSS</h3>
+        </div>
+        <!-- HTML5 -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up hover:text-crimson-500" style="transition: color 0.3s;">
+          <h3 class="text-xl font-semibold">HTML5</h3>
+        </div>
+        <!-- CSS -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up hover:text-crimson-500" style="transition: color 0.3s;">
+          <h3 class="text-xl font-semibold">CSS</h3>
+        </div>
+        <!-- JavaScript -->
+        <div class="text-center transform transition-transform duration-300 hover:scale-150 animate-fade-in-up hover:text-crimson-500" style="transition: color 0.3s;">
+          <h3 class="text-xl font-semibold">JavaScript</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-black bg-opacity-80">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-12 text-crimson-500 animate-fade-in-up" style="color: #DC143C;">
+        Contact Me
+      </h2>
+      <form class="mb-8 text-left" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+        <label for="name" class="block mb-2 font-semibold text-gray-300">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full mb-4 px-4 py-2 rounded bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:border-crimson-500"
+        />
+        <label for="email" class="block mb-2 font-semibold text-gray-300">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="w-full mb-4 px-4 py-2 rounded bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:border-crimson-500"
+        />
+        <label for="message" class="block mb-2 font-semibold text-gray-300">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full mb-4 px-4 py-2 rounded bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:border-crimson-500"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-crimson-600 text-white px-6 py-3 rounded-full hover:bg-crimson-700 transition-colors cursor-pointer"
+          style="background-color: #DC143C;"
+          onmouseover="this.style.backgroundColor='#B22222'"
+          onmouseout="this.style.backgroundColor='#DC143C'"
+        >
+          Send Message
+        </button>
+      </form>
+      <div class="text-gray-300 mt-8">
+        <p class="mb-4 text-lg">
+          I'd love to connect and chat! Feel free to reach out to me on LinkedIn:
+        </p>
+        <a
+          href="https://www.linkedin.com/in/asser-el-sayed-b99474217/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center bg-crimson-600 hover:bg-crimson-700 text-white font-semibold px-6 py-3 rounded-full transition-colors cursor-pointer"
+          style="background-color: #DC143C;"
+          onmouseover="this.style.backgroundColor='#B22222'"
+          onmouseout="this.style.backgroundColor='#DC143C'"
+        >
+          <!-- LinkedIn SVG Icon -->
+          <svg
+            class="w-6 h-6 mr-3"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.865 0-2.151 1.456-2.151 2.961v5.704h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.838-1.562 3.036 0 3.6 2 3.6 4.59v5.605z"/>
+          </svg>
+          Asser El-Sayed
+        </a>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Mobile menu toggle function
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
